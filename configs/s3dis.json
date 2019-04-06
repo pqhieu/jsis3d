@@ -1,0 +1,19 @@
+{
+    "root": "data/s3dis",
+    "epochs": 100,
+    "batch_size": 16,
+    "num_workers": 4,
+    "input_channels": 9,
+    "embedding_size": 32,
+    "num_classes": 13,
+    "device": "cuda",
+    "optimizer": "sgd",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0005,
+    "momentum": 0.9,
+    "step_size": 20,
+    "decay_rate": 0.5,
+    "delta_d": 1.5,
+    "delta_v": 0.5,
+    "bandwidth": 1.5
+}
