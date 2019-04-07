@@ -29,9 +29,10 @@ This code is tested in Manjaro Linux with CUDA 10.0 and Pytorch 1.0.
 - Pytorch 0.4.0+
 
 ### Dataset
-We have preprocessed the S3DIS dataset (2.5 GB) in HDF5 format. After
-downloading the files, put them into the corresponding `data/[dataset]/h5`
-folder.
+We have preprocessed the S3DIS dataset ([2.5
+GB](https://drive.google.com/open?id=1s1cFfb8cInM-SNHQoTGxN9BIyNpNQK6x)) in HDF5
+format. After downloading the files, put them into the corresponding
+`data/s3dis/h5` folder.
 
 ### Training & Evaluation
 To train a model on S3DIS dataset:

@@ -23,6 +23,9 @@ logdir = args.logdir
 args = json.load(open(config))
 if not os.path.exists(logdir):
     os.mkdir(logdir)
+fname = os.path.join(logdir, 'config.json')
+with open(fname, 'w') as fp:
+    json.dump(args, fp, indent=4)
 
 device = args['device']
 dataset = S3DIS(args['root'], training=True)
