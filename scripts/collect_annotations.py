@@ -9,11 +9,11 @@ parser.add_argument('--root', help='path to root directory')
 args = parser.parse_args()
 
 root = args.root
-fname = os.path.join(root, 'metadata/classes.txt')
+fname = os.path.join(root, 'metadata', 'classes.txt')
 classes = [line.strip() for line in open(fname, 'r')]
 class2label = {cls: i for i, cls in enumerate(classes)}
 
-fname = os.path.join(root, 'metadata/annotations.txt')
+fname = os.path.join(root, 'metadata', 'annotations.txt')
 annotations = [line.strip() for line in open(fname, 'r')]
 annotations = [os.path.join(root, 'raw', anno) for anno in annotations]
 

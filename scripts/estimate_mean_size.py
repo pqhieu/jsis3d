@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 root = args.root
 
-fname = os.path.join(root, 'metadata/train.txt')
+fname = os.path.join(root, 'metadata', 'train.txt')
 flist = [os.path.join(root, 'h5', line.strip())
          for line in open(fname, 'r')]
 

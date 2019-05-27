@@ -12,10 +12,10 @@ args = parser.parse_args()
 root = args.root
 seed = args.seed
 np.random.seed(seed)
-fname = os.path.join(root, 'metadata/classes.txt')
+fname = os.path.join(root, 'metadata', 'classes.txt')
 classes = [line.strip() for line in open(fname, 'r')]
 
-fname = os.path.join(root, 'metadata/all_data.txt')
+fname = os.path.join(root, 'metadata', 'all_data.txt')
 flist = [os.path.join(root, 'processed', line.strip())
          for line in open(fname, 'r')]
 
