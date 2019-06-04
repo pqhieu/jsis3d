@@ -13,15 +13,14 @@ from models import *
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', help='path to the json config file')
 parser.add_argument('--logdir', help='path to the logging directory')
 args = parser.parse_args()
 
-config = args.config
 logdir = args.logdir
+config = os.path.join(logdir, 'config.json')
 args = json.load(open(config))
 
-device = 'cuda:0'
+device = args['device']
 dataset = S3DIS(args['root'], training=False)
 loader = data.DataLoader(
     dataset,

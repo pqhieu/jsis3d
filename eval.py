@@ -10,14 +10,13 @@ from utils import block_merge
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', help='path to the json config file')
 parser.add_argument('--logdir', help='path to the logging directory')
 parser.add_argument('--visualize', action='store_true', help='save point clouds to PLY files')
 args = parser.parse_args()
 
-config = args.config
 logdir = args.logdir
 visualize = args.visualize
+config = os.path.join(logdir, 'config.json')
 args = json.load(open(config))
 
 fname = os.path.join(logdir, 'pred.npz')
