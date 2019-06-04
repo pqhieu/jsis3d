@@ -44,11 +44,11 @@ Log files and network parameters will be saved to the `logs/s3dis` folder.
 After training, we can use the model to predict semantic-instance segmentation
 labels as follows:
 
-    python pred.py --config configs/s3dis.json --logdir logs/s3dis
+    python pred.py --logdir logs/s3dis
 
 To evaluate the results:
 
-    python eval.py --config configs/s3dis.json --logdir logs/s3dis
+    python eval.py --logdir logs/s3dis
 
 ### Prepare your own dataset
 Check out the `scripts` folder to see how we prepare the dataset for training.
