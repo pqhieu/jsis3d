@@ -125,6 +125,7 @@ for fname in flist:
         data.write(fname)
     offset += step
 
+oacc = np.sum(accu) / np.sum(freq)
 accu = accu / freq
 iou  = inter / union
 
@@ -145,6 +146,7 @@ perf = {
     'recall': list(r)
 }
 
+print('> Overall accuracy: {:.3f}'.format(oacc))
 print('> Mean accuracy: {:.3f}'.format(np.mean(accu)))
 print('> Mean IoU: {:.3f}'.format(np.mean(iou)))
 print('> Mean precision: {:.3f}'.format(np.mean(p)))
