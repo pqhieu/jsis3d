@@ -3,10 +3,9 @@ import torch.nn as nn
 
 
 class NLLLoss(nn.Module):
-    def __init__(self, reduction='mean'):
-        # TODO: Respect the reduction rule
+    def __init__(self, weight=None, reduction='mean'):
         super(NLLLoss, self).__init__()
-        self.nll = nn.NLLLoss()
+        self.nll = nn.NLLLoss(weight, reduction=reduction)
 
     def forward(self, x, y):
         batch_size = x.shape[0]

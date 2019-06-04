@@ -8,9 +8,9 @@ import torch.optim as optim
 import torch.utils.data as data
 from collections import defaultdict
 
-from loaders import S3DIS
-from models import MTPNet
-from losses import NLLLoss, DiscriminativeLoss
+from loaders import *
+from models import *
+from losses import *
 
 
 parser = argparse.ArgumentParser()
@@ -57,12 +57,18 @@ scheduler = optim.lr_scheduler.StepLR(
     gamma=args['decay_rate']
 )
 
+weight = None
+if args['weight']:
+    fname = os.path.join(args['root'], 'metadata', 'weight.txt')
+    weight = torch.tensor(np.loadtxt(fname), dtype=torch.float32)
+    weight = weight.to(device)
+
 criterion = {}
 criterion['discriminative'] = DiscriminativeLoss(
     args['delta_d'],
     args['delta_v']
 )
-criterion['nll'] = NLLLoss()
+criterion['nll'] = NLLLoss(weight)
 criterion['discriminative'].to(device)
 criterion['nll'].to(device)
 

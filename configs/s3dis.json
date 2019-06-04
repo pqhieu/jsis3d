@@ -10,6 +10,7 @@
     "optimizer": "sgd",
     "learning_rate": 0.01,
     "weight_decay": 0.0005,
+    "weight": false,
     "momentum": 0.9,
     "step_size": 20,
     "decay_rate": 0.5,

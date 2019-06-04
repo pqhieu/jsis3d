@@ -8,8 +8,8 @@ import torch
 import torch.utils.data as data
 from sklearn.cluster import MeanShift, estimate_bandwidth
 
-from loaders import S3DIS
-from models import MTPNet
+from loaders import *
+from models import *
 
 
 parser = argparse.ArgumentParser()
