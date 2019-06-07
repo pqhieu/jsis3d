@@ -3,7 +3,6 @@ import sys
 import h5py
 import argparse
 import numpy as np
-import scipy.stats as stats
 
 
 parser = argparse.ArgumentParser()

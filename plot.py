@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--root', help='path to root directory')
-parser.add_argument('--metrics', help='metrics to plot')
+parser.add_argument('--metric', help='metric to plot')
 args = parser.parse_args()
 
 root = args.root
-metrics = args.metrics
+metric = args.metric
 
 fname = os.path.join(root, 'metadata', 'classes.txt')
 classes = [line.strip() for line in open(fname, 'r')]
@@ -31,7 +31,7 @@ for i, run in enumerate(runs):
     if not os.path.exists(fname): continue
 
     perf = json.load(open(fname))
-    y = perf[metrics]
+    y = perf[metric]
     y += [np.mean(y)]
     plt.scatter(x, y, zorder=3, marker=markers[i], label=run)
 

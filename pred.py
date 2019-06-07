@@ -6,7 +6,8 @@ import argparse
 import numpy as np
 import torch
 import torch.utils.data as data
-from sklearn.cluster import MeanShift, estimate_bandwidth
+from tqdm import tqdm
+from sklearn.cluster import MeanShift
 
 from loaders import *
 from models import *
@@ -43,11 +44,12 @@ model.eval()
 
 pred = {'semantics': [], 'instances': []}
 with torch.no_grad():
-    for i, batch in enumerate(loader):
+    for i, batch in enumerate(tqdm(loader, ascii=True)):
         points = batch['points'].to(device)
-        size = batch['size']
-        logits, embedded = model(points)
+        labels = batch['labels']
+        size   = batch['size']
 
+        logits, embedded = model(points)
         logits = logits.cpu().numpy()
         semantics = np.argmax(logits, axis=-1)
 
@@ -62,11 +64,6 @@ with torch.no_grad():
 
         pred['semantics'].append(semantics)
         pred['instances'].append(instances)
-
-        now = datetime.datetime.now()
-        log = '{} | Batch [{:04d}/{:04d}] |'
-        log = log.format(now.strftime("%c"), i, len(loader))
-        print(log)
 
 pred['semantics'] = np.concatenate(pred['semantics'], axis=0)
 pred['instances'] = np.concatenate(pred['instances'], axis=0)
