@@ -20,7 +20,6 @@ classes += ['mean']
 runs = [d for d in os.listdir('logs') if
         os.path.isdir(os.path.join('logs', d))]
 
-plt.style.use(['seaborn-notebook',])
 x = np.arange(len(classes))
 markers = ['o', 'v', '^', '>', '8', 's']
 plt.figure(figsize=(6, 4))

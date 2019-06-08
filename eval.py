@@ -51,7 +51,6 @@ for fname in flist:
     step   = coords.shape[0]
 
     pred = pdict[offset:offset+step]
-    pred = block_merge(points[:, :, 6:9], pred)
     pred = pred.reshape(-1, 2)
 
     coords = coords.reshape(-1, 3)
