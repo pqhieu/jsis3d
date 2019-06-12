@@ -21,6 +21,7 @@ args = parser.parse_args()
 
 logdir = args.logdir
 config = os.path.join(logdir, 'config.json')
+mvcrf = args.mvcrf
 args = json.load(open(config))
 
 device = args['device']
@@ -87,7 +88,7 @@ for fname in tqdm(flist, ascii=True):
     pred = block_merge(points[:, :, 6:9], pred)
     pred = pred.reshape(-1, 2)
 
-    if args.mvcrf:
+    if mvcrf:
         coords = coords.reshape(-1, 3)
         points = points.reshape(-1, 9)
 

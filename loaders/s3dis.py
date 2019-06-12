@@ -2,6 +2,7 @@ import os
 import h5py
 import numpy as np
 import torch.utils.data as data
+from tqdm import tqdm
 
 
 class S3DIS(data.Dataset):
@@ -14,7 +15,8 @@ class S3DIS(data.Dataset):
         self.coords = []
         self.points = []
         self.labels = []
-        for fname in self.rooms:
+        print('> Loading h5 files...')
+        for fname in tqdm(self.rooms, ascii=True):
             fin = h5py.File(os.path.join(self.root, 'h5', fname))
             self.coords.append(fin['coords'][:])
             self.points.append(fin['points'][:])
