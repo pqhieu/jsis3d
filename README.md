@@ -29,7 +29,7 @@ This code is tested in Manjaro Linux with CUDA 10.0 and Pytorch 1.0.
 - Pytorch 0.4.0+
 
 ### Installation
-To use MV-CRF, you first need to compile the code:
+To use MV-CRF (optional), you first need to compile the code:
 
     cd external/densecrf
     mkdir build
