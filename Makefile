@@ -4,7 +4,7 @@ UNAME = $(shell uname)
 
 DEFINES =
 INCLUDES = -Iexternal/densecrf/include
-CXXFLAGS = -O2 -pedantic $(INCLUDES) $(DEFINES)
+CXXFLAGS = -O2 -pedantic -std=c++11 $(INCLUDES) $(DEFINES)
 LDFLAGS = -Lexternal/densecrf/build/src
 LDLIBS = -lz -ldensecrf
 
