@@ -1,6 +1,6 @@
 {
     "root": "data/s3dis",
-    "epochs": 100,
+    "epochs": 40,
     "batch_size": 16,
     "num_workers": 4,
     "input_channels": 9,
