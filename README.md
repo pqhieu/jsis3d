@@ -7,8 +7,8 @@ This is the official Pytorch implementation of the following publication.
 > Quang-Hieu Pham, Duc Thanh Nguyen, Binh-Son Hua, Gemma Roig, Sai-Kit
 > Yeung<br/> *Conference on Computer Vision and Pattern Recognition (CVPR),
 > 2019* (**Oral**)<br/>
-> [Paper](https://pqhieu.github.io/assets/cvpr19/main.pdf),
-> [Homepage](https://pqhieu.github.io/cvpr19.html)
+> [Paper](https://arxiv.org/abs/1904.00699),
+> [Homepage](https://pqhieu.github.io/cvpr19/)
 
 ### Citation
 If you find our work useful for your research, please consider citing:
