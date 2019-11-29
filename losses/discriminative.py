@@ -59,6 +59,7 @@ class DiscriminativeLoss(nn.Module):
         for i in range(batch_size):
             n = size[i]
             loss += torch.sum(var[i,:,:n]) / torch.sum(masks[i,:,:n])
+        loss /= batch_size
         return loss
 
     def _distance(self, centroids, size):
