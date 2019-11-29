@@ -62,6 +62,10 @@ To evaluate the results, run the following command:
 
 For more details, you can use the `--help` option for every scripts.
 
+> **Note**: The results on S3DIS in our paper are tested on Area 6 instead of Area 5.
+> To reproduce the results, please change the split in `train.txt` and `test.txt` accordingly.
+> Here I chose to keep the test set on Area 5 to make it easier to compare with other methods.
+
 ### Prepare your own dataset
 Check out the `scripts` folder to see how we prepare the dataset for training.
 
